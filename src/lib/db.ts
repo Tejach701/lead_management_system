@@ -1,9 +1,5 @@
-import sqlite3 from "sqlite3";
-import { open } from "sqlite";
+import Database from "better-sqlite3";
 
-export async function openDB() {
-  return open({
-    filename: "./lead_management.db",
-    driver: sqlite3.Database,
-  });
-}
+const db = new Database("lead_management.db");
+
+export default db;
